@@ -7,5 +7,6 @@ console.log('express router loaded');
 
 router.get('/', homeController.home);
 router.use('/users', require('./users'));
+router.use('/users', require('./post'));
 
 module.exports = router;
