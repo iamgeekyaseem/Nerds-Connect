@@ -6,6 +6,9 @@ const port = 8000; //bydefault webs run on port 80 in live server
 //use express router
 app.use('/', require('./routes'));
 
+//set up the view engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
 app.listen(port, function(err){
     if(err){
