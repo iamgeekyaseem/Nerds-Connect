@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+    background-color: #191414;
+    color: #191414;
+    font-family: sans-serif;
+}
+
+#signin-text{
+    color: #1DB954;
+}
+
+.container .signin-container{
+    display: flex;
+}
+
+.signin-container{
+    justify-content: center;
+}
