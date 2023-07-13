@@ -1,8 +1,13 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 const app = express();
 const port = 8000; //bydefault webs run on port 80 in live server
 const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
+
+//reading through the post request
+app.use(express.urlencoded());
+app.use(cookieParser());
 
 //this will allow us to use the assets folder as static elemet in the website
 app.use(express.static('./assets'));

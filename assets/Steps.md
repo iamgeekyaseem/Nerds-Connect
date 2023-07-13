@@ -75,3 +75,9 @@ Step 15:
     -made a js file on config folder 
     - wrote code to connect to mongodb server
     -exported it and required it in the main index.js
+
+Step 16:
+    -setting up the cookie-parser in main index.js and also adding the express.urlencoded() that later will be used for accesing the form data for sign in sign up like in mini project
+
+Step 17:
+    -
