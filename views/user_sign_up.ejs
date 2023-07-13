@@ -56,7 +56,7 @@ body{
     border-radius: 5px;
 }
 
-button{
+#signup-button{
     height: auto;
     width: 30%;
     background-color: #1DB954;
@@ -79,12 +79,12 @@ button{
         <div class="signup-container">
             <div class="signup-form">
                 <h1 id="signup-text">Sign Up</h1>
-                <form action="POST">
+                <form action="/users/create" method="POST">
                     <input type="text" name="name" placeholder="Your Name">
                     <input type="email" name="email" placeholder="Email address" required>
                     <input type="text" name="password" id="" placeholder="Password" required>
                     <input type="text" name="confirm_password" id="" placeholder="Confirm Password" required>
-                    <button id="signup-button" type="submit">Create your account</button>
+                    <input id="signup-button" type="submit" value="Sign UP">
                 </form>
             </div>
         </div>
