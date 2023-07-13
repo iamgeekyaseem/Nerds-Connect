@@ -1,4 +1,8 @@
+body{
+    background-color: antiquewhite;
+}
 
+/* 
 body{
     margin: 0;
     background-color: #191414;
@@ -28,8 +32,8 @@ body{
        box-shadow: 10px 10px 10px #1DB954;
        border: 2px solid #1DB954;
    
-       /* justify-content: center; */
-       /* flex-direction: column; */
+       justify-content: center; */
+       /* flex-direction: column;
    }
    
    .signin-form{
@@ -60,4 +64,4 @@ body{
    
    }
    
-   
+    */
