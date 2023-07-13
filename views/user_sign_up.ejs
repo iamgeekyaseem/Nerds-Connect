@@ -5,6 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <%= title %> </title>
     <link rel="stylesheet" type="text/css" href="/nerdsConnect/assets/signup.css">
+    <style>
+
+        
+body{
+ margin: 0;
+ background-color: #191414;
+ color: #191414;
+ font-family: sans-serif;
+}
+
+
+.body-container .signup-container{
+    display: flex;
+}
+
+.signup-form #signup-text{
+    margin-left: 10px;
+    color: #1DB954;
+    
+}
+
+
+.signup-container{
+    height: 80vh;
+    width: 30vw;
+    margin: auto;
+    background-color: #191414;
+    margin-top: 50px;
+    padding: 20px;
+    box-shadow: 10px 10px 10px #1DB954;
+    border: 2px solid #1DB954;
+
+    /* justify-content: center; */
+    /* flex-direction: column; */
+}
+
+.signup-form{
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form input{
+    height: 30%;
+    width: 80%;
+    margin: 10px;
+    /* padding: 5px; */
+    padding-left: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+button{
+    height: auto;
+    width: 30%;
+    background-color: #1DB954;
+    padding: 8px;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+
+
+}
+
+
+
+    </style>
 </head>
 <body>
     <div class="body-container">
@@ -12,9 +80,10 @@
             <div class="signup-form">
                 <h1 id="signup-text">Sign Up</h1>
                 <form action="POST">
-                    <input type="text" name="email" placeholder="Email address" required>
+                    <input type="text" name="name" placeholder="Your Name">
+                    <input type="email" name="email" placeholder="Email address" required>
                     <input type="text" name="password" id="" placeholder="Password" required>
-                    <input type="text" name="name" placeholder="">
+                    <input type="text" name="confirm_password" id="" placeholder="Confirm Password" required>
                     <button id="signup-button" type="submit">Create your account</button>
                 </form>
             </div>
