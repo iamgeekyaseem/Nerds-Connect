@@ -1,7 +1,11 @@
 const express = require('express');
 const app = express();
 const port = 8000; //bydefault webs run on port 80 in live server
+const expressLayouts = require('express-ejs-layouts');
 
+
+//this will allow us to use the assets folder as static elemet in the website
+app.use(express.static('./assets'));
 
 //use express router
 app.use('/', require('./routes'));
