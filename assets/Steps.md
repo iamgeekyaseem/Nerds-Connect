@@ -67,4 +67,11 @@ Step 13:
     -now learning about the cookies and further work will be to POST the form to database for create user and userSession 
 
 Step 14:
-    -
+    -setup static file access and using layouts for footer header plus how it works
+    -using the <%- include %> blocks where ever needed
+    -setiing the acces in the main index.js
+
+Step 15:
+    -made a js file on config folder 
+    - wrote code to connect to mongodb server
+    -exported it and required it in the main index.js

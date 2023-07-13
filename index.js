@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = 8000; //bydefault webs run on port 80 in live server
+const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
 
 //this will allow us to use the assets folder as static elemet in the website
