@@ -4,21 +4,21 @@ const User = require('../models/user')
 
 
 module.exports.profile = function (req, res) {
-    res.end('<h1>User profile</h1>');
+  res.end('<h1>User profile</h1>');
 }
 
 //render sign in page
 module.exports.signin = function (req, res) {
-    res.render('user_sign_in', {
-        title: "Sign-In Page"
-    });
+  res.render('user_sign_in', {
+    title: "Sign-In Page"
+  });
 }
 
 //render signup page
 module.exports.signup = function (req, res) {
-    res.render('user_sign_up', {
-        title: "Sign-Up Page"
-    });
+  res.render('user_sign_up', {
+    title: "Sign-Up Page"
+  });
 }
 
 // //get the signup data------no longer takes callback function for Model.findOne and Model.create hence converting it to promises using .then() and .catch() methods
@@ -45,31 +45,51 @@ module.exports.signup = function (req, res) {
 // }
 
 
-// ------------//get the signup data------no longer takes callback function for Model.findOne and Model.create hence converting it to promises using .then() and .catch() methods
-module.exports.create = function(req, res) {
-    if (req.body.password != req.body.confirm_password) {
-      return res.redirect('back');
-    }
-  
-    User.findOne({ email: req.body.email })
-      .then(user => {
-        if (!user) {
-          return User.create(req.body);
-        } else {
-          throw new Error('User already exists.');
-        }
-      })
-      .then(() => {
-        return res.redirect('/users/sign-in');
-      })
-      .catch(err => {
-        console.log('Error:', err.message);
-        return res.redirect('back');
-      });
-  };
+// ------------//get the signup data------Mongoose no longer takes callback function for Model.findOne and Model.create hence converting it to promises using .then() and .catch() methods
+module.exports.create = function (req, res) {
+  if (req.body.password != req.body.confirm_password) {
+    return res.redirect('back');
+  }
 
-  
+  User.findOne({ email: req.body.email })
+    .then(user => {
+      if (!user) {
+        return User.create(req.body);
+      } else {
+        throw new Error('User already exists.');
+      }
+    })
+    .then(() => {
+      return res.redirect('/users/sign-in');
+    })
+    .catch(err => {
+      console.log('Error:', err.message);
+      return res.redirect('back');
+    });
+};
+
+
 //sign in and create a session for user
 module.exports.createSession = function (req, res) {
-    //todo later
+  //steps to authenticate
+  //find the user
+  User.findOne({ email: req.body.email })
+    .then(user => {
+      //handle password that does not match
+      if(user){
+        if(user.password != req.body.password){
+          return res.redirect('back');
+        }
+        //handle session creation
+        res.cookie('user_id', user.id);
+        return res.redirect('/users/profile');
+      }else{
+        //handle user not found
+        return res.redirect('back');
+      }
+    })
+    .catch(err=>{
+      if(err){console.log('error in finding user in signing in')}
+    })
+  
 }
