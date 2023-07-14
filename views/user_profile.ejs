@@ -1,0 +1,24 @@
+<!-- <link rel="stylesheet" href="/css/user_profile.css"> -->
+
+<div id="profile-container">
+
+    <h1>nerdsConnect / Profile</h1>
+
+    <h1>Welcome, <%= user.name %> ! </h1>
+
+    <p>Name: <%= user.name %>
+    </p>
+
+    <p>Email: <%= user.email %>
+    </p>
+
+    <button onclick="deleteCookie();" >Sign Out</button>
+
+</div>
+
+<script>
+    function deleteCookie(){
+        document.cookie = "user_id=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        window.location.reload();
+    }
+</script>
