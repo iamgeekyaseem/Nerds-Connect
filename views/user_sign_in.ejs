@@ -81,9 +81,9 @@ button{
         <div class="signin-container">
             <div class="signin-form">
                 <h1 id="signin-text">Sign In</h1>
-                <form action="POST">
+                <form action="/users/create-session" method="POST">
                     <input type="text" name="email" placeholder="Email address" required>
-                    <input type="text" name="password" id="" placeholder="Password" required>
+                    <input type="password" name="password" id="" placeholder="Password" required>
                     
                     <button id="signin-button" type="submit">Sign In</button>
                 </form>
