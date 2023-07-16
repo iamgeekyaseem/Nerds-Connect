@@ -11,14 +11,22 @@ module.exports.profile = function (req, res) {
 
 //render sign in page
 module.exports.signin = function (req, res) {
-    res.render('user_sign_in', {
+  if(req.isAuthenticated()){
+    return res.redirect('/users/profile');
+  }
+
+    return res.render('user_sign_in', {
         title: "Sign-In Page"
     });
 }
 
 //render signup page
 module.exports.signup = function (req, res) {
-    res.render('user_sign_up', {
+  if(req.isAuthenticated()){
+    return res.redirect('/users/profile');
+  }
+
+    return res.render('user_sign_up', {
         title: "Sign-Up Page"
     });
 }
