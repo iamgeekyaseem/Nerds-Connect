@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <%= title %> </title>
+    <script src="https://kit.fontawesome.com/ca38016528.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
     <%- style %>
 </head>
 <body>
-    <%- include('_header'); %>
+    <div class="head">
+        <%- include('_header'); %>
+    </div>
+    
 
-    <%- body %>
+    <main id="layout-main">
+        <%- body %>
+    </main>
+    
+    <div class="footer-bottom">
+        <%- include('_footer');%>
+    </div>
+    
 
-    <%- include('_footer');%>
     <%- script %>
 </body>
 </html>

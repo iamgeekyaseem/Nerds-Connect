@@ -1,0 +1,31 @@
+#header-top {
+  background-color: #212121;
+  height: 40px;
+  width: 100%;
+  color: #1db954;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#header-top .nav-logo {
+  padding: 4px;
+}
+#header-top .nav-items ul {
+  list-style: none;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+#header-top .nav-items ul li {
+  display: inline;
+  padding-right: 8px;
+}
+#header-top .nav-items ul li a {
+  background-color: #1db954;
+  color: white;
+  text-decoration: none;
+  border: 0.5px solid #1db954;
+  padding: 3px;
+  font-size: small;
+  border-radius: 2px;
+}

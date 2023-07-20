@@ -1,4 +1,7 @@
 body {
   margin: 0px;
-  /* text-align: center; */
+  background-color: #b3b3b3;
+}
+body #layout-main {
+  height: 100vh;
 }
