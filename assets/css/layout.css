@@ -1,6 +1,7 @@
 body {
   margin: 0px;
   background-color: #b3b3b3;
+  font-family: sans-serif;
 }
 body #layout-main {
   height: 100vh;

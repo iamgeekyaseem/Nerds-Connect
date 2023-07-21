@@ -1,0 +1,38 @@
+$green: #1db954;
+$matte-black:#212121;
+$black:	#121212;
+$dark-grey:#535353;
+$light-grey: #b3b3b3;
+
+.footer-bottom{
+    background-color: $matte-black;
+    height: 50px;
+    width: 100%;
+    color: $green;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .copy-right{
+        p{
+            padding: 0px 8px 0px 8px;
+            font-size: medium;
+        }
+    }
+    .links-to-pages{
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            padding-right: 8px;
+            li{
+
+                a{
+                    color: white;
+                    text-decoration: none;
+                    font-size: x-small;
+                }
+            }
+        }
+    }
+
+}

@@ -10,6 +10,13 @@
 #header-top .nav-logo {
   padding: 4px;
 }
+#header-top .nav-logo a {
+  font-weight: 550;
+  font-family: sans-serif;
+  color: #1db954;
+  text-decoration: none;
+  padding-left: 4px;
+}
 #header-top .nav-items ul {
   list-style: none;
   display: inline;
@@ -25,7 +32,7 @@
   color: white;
   text-decoration: none;
   border: 0.5px solid #1db954;
-  padding: 3px;
-  font-size: small;
+  padding: 5px;
+  font-size: xx-small;
   border-radius: 2px;
 }

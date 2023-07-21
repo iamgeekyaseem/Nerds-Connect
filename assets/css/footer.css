@@ -1,1 +1,24 @@
-
+.footer-bottom {
+  background-color: #212121;
+  height: 50px;
+  width: 100%;
+  color: #1db954;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer-bottom .copy-right p {
+  padding: 0px 8px 0px 8px;
+  font-size: medium;
+}
+.footer-bottom .links-to-pages ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-right: 8px;
+}
+.footer-bottom .links-to-pages ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: x-small;
+}
