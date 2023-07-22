@@ -8,7 +8,9 @@ body{
     margin: 0px;
     background-color: $light-grey;
     font-family: sans-serif;
+    
     #layout-main{
-        height: 100vh;
+        height: 100%;
+        margin-bottom: 100px;
     }
 }

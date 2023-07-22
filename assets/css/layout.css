@@ -4,5 +4,6 @@ body {
   font-family: sans-serif;
 }
 body #layout-main {
-  height: 100vh;
+  height: 100%;
+  margin-bottom: 100px;
 }
