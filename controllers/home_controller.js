@@ -9,6 +9,12 @@ module.exports.home = function (req, res) {
     // res.cookie('user_id', 15)
     Post.find({})
     .populate('user')
+    .populate({
+        path: 'comments', //derived from the arry of comment present in post
+        populate: {
+            path: 'user'
+        }
+    })
     .then(posts => {
         res.render('home', {
             title: "nerdsConnect | Home",

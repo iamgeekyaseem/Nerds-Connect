@@ -1,4 +1,7 @@
 .footer-bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
   background-color: #212121;
   height: 50px;
   width: 100%;

@@ -5,6 +5,11 @@ $dark-grey:#535353;
 $light-grey: #b3b3b3;
 
 .footer-bottom{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    // overflow: auto;
+    //for some reason the lat comment is not visible due to the presence of footer style
     background-color: $matte-black;
     height: 50px;
     width: 100%;
