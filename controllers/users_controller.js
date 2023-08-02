@@ -11,7 +11,17 @@ module.exports.profile = function (req, res) {
       profile_user: user
     });
   });
-    
+}
+
+module.exports.update = function(req, res) {
+  if(req.user.id == req.params.id){
+    User.findByIdAndUpdate(req.params.id, req.body)
+    .then(user => {
+      return res.redirect('back');
+    })
+  }else{
+    return res.status(401).send('Unauthorized');
+  }
 }
 
 //render sign in page
@@ -36,31 +46,6 @@ module.exports.signup = function (req, res) {
     });
 }
 
-// //get the signup data------no longer takes callback function for Model.findOne and Model.create hence converting it to promises using .then() and .catch() methods
-
-// module.exports.create = function (req, res) {
-//     if (req.body.password != req.body.confirm_password) {
-//         return res.redirect('back');
-//     }
-//     User.findOne({ email: req.body.email }, function (err, user) {
-//         if (err) {
-//             console.log('error in finding user in signing up'); return;
-//         }
-
-//         if (!user) {
-//             User.create(req.body, function (err, user) {
-//                 if (err) { console.log('error in creating user in signing up'); return; }
-
-//                 return res.redirect('/users/sign-in');
-//             })
-//         } else {
-//             return res.redirect('back');
-//         }
-//     });
-// }
-
-
-// ------------//get the signup data------no longer takes callback function for Model.findOne and Model.create hence converting it to promises using .then() and .catch() methods
 module.exports.create = function(req, res) {
     if (req.body.password != req.body.confirm_password) {
       return res.redirect('back');

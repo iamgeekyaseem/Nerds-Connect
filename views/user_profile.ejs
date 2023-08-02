@@ -4,5 +4,18 @@
 
 <h2>Welcome, <%= user.name %></h2>
 
-<p>Name: <%= profile_user.name %></p>
-<p>E-mail: <%= profile_user.email %></p>
+    <% if (user.id == profile_user.id){ %>
+
+        <form action="/users/update/<%= profile_user.id %>" method="post">
+            <input type="text" name="name" placeholder="Your Name" value="<%= profile_user.name %>" required>
+            <input type="email" name="email" placeholder="Your E-mail" value="<%= profile_user.email %>" required>
+            <input type="submit" value="Update">
+        </form>
+
+    <% }else{ %>
+
+        <p>Name: <%= profile_user.name %></p>
+        <p>E-mail: <%= profile_user.email %></p>
+
+    <% } %>
+
