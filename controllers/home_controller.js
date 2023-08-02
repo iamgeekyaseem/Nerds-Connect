@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports.home = function (req, res) {
     // res.end('<h1>express controller is running<h1/>');
@@ -10,15 +11,20 @@ module.exports.home = function (req, res) {
     Post.find({})
     .populate('user')
     .populate({
-        path: 'comments', //derived from the arry of comment present in post
+        path: 'comments', //derived from the array of comment present in post
         populate: {
             path: 'user'
         }
     })
     .then(posts => {
-        res.render('home', {
-            title: "nerdsConnect | Home",
-            posts: posts
+
+        User.find({})
+        .then(user => {
+            res.render('home', {
+                title: "nerdsConnect | Home",
+                posts: posts,
+                all_users: user 
+            })
         })
     });
 };
