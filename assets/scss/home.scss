@@ -1,0 +1,21 @@
+$green: #1db954;
+$matte-black:#212121;
+$black:	#121212;
+$dark-grey:#535353;
+$light-grey: #b3b3b3;
+
+.home-container{
+    display: flex;
+    padding: 10px;
+
+    #feed-posts{
+        width: 80%;
+        padding: 10px;
+    }
+
+    #user-friends{
+        width: 20%;
+        padding: 10px;
+        border-left: solid lightgray thin ;
+    }
+}

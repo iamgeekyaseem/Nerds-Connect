@@ -6,7 +6,7 @@ $light-grey: #b3b3b3;
 
 #header-top{
     background-color: $matte-black;
-    height: 40px;
+    height: 60px;
     width: 100%;
     color: $green;
     display: flex;
@@ -30,14 +30,14 @@ $light-grey: #b3b3b3;
             padding: 0;
             li{
                 display: inline;
-                padding-right: 8px;
+                padding-right: 10px;
                 a{
                     background-color: $green;
                     color: white;
                     text-decoration: none;
                     border: 0.5px solid $green;
                     padding: 5px;
-                    font-size: xx-small;
+                    font-size: small;
                     border-radius: 2px;
                 }
             }

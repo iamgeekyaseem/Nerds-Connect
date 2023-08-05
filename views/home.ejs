@@ -1,38 +1,42 @@
-<h1>NerdsConnect / Home</h1>
-<!--TODO: Change this font to Press+Start+2 -->
+<link rel="stylesheet" href="/css/home.css">
 
-<section>
-    <h4>Posts</h4>
+<div class="home-container">
+    <section id="feed-posts">
+        <h4>Posts</h4>
 
-    <% if(locals.user){%>
+        <% if(locals.user){%>
 
-    <form action="/posts/create" id="new-post-form" method="post" required>
-        <textarea name="content" id="" cols="30" rows="10" placeholder="Type here..."></textarea>
-        <input type="submit" value="Post">
-    </form>
+            <form action="/posts/create" id="new-post-form" method="post" required>
+                <textarea name="content" id="" cols="30" rows="10" placeholder="Type here..."></textarea>
+                <input type="submit" value="Post">
+            </form>
 
-    <%}%>
-
-    <div class="posts-list-container">
-        <ul>
-
-            <% for(post of posts){%>
-
-                <!--Posts list code is distributed using the partials -->
-                <%- include('_post') -%>
-                
             <%}%>
 
-        </ul>
-    </div>
+                <div class="posts-list-container">
+                    <ul>
 
-</section>
+                        <% for(post of posts){%>
 
-<section id="user-friends">
-    <h4>Friends</h4>
-    <% for (u of all_users) {%>
-        <p>
-            <a href="/users/profile/<%= u.id %>"> <%=u.name%> </a>
-        </p>
-    <%}%>
-</section>
+                            <!--Posts list code is distributed using the partials -->
+                            <%- include('_post') -%>
+
+                                <%}%>
+
+                    </ul>
+                </div>
+
+    </section>
+
+    <section id="user-friends">
+        <h4>Friends</h4>
+        <% for (u of all_users) {%>
+            <p>
+                <a href="/users/profile/<%= u.id %>">
+                    <%=u.name%>
+                </a>
+            </p>
+            <%}%>
+    </section>
+
+</div>

@@ -1,9 +1,8 @@
 .footer-bottom {
-  position: fixed;
   left: 0;
   bottom: 0;
   background-color: #212121;
-  height: 50px;
+  height: 60px;
   width: 100%;
   color: #1db954;
   display: flex;
