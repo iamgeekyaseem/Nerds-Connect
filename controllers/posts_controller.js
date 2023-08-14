@@ -7,15 +7,16 @@ module.exports.create = async function(req, res){
             content: req.body.content,
             user: req.user._id
         }).then(post => {
+            req.flash('success', 'Post Published!');
             return res.redirect('back');
         }).catch(err =>{
             if(err){
-                console.log('Error in creating post', err);
-                return;
+                req.flash('error', err);
+                return res.redirect('back');;
             }
         })
     }catch(err){
-        console.log("Error", err);
+        console.log("error", err);
         return;
     }
 }
@@ -29,7 +30,8 @@ module.exports.destroy = async function(req, res){
             post.deleteOne({});
 
             Comment.deleteMany({post: req.params.id})
-            .then(err => {
+            .then( err => {
+                req.flash('error', 'Post Deleted!');
                 return res.redirect('back');
             })
         }else{
